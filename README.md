@@ -18,7 +18,7 @@ Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository_url>
+git clone [<repository_url>](https://github.com/ParthibanRajasekaran/tic-tac-toe.git)
 cd tic-tac-toe
 ```
 ### 2. Set Up a Virtual Environment
