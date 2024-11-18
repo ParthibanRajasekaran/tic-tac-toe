@@ -1,0 +1,253 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("/static/images/xmas.gif") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.game-container {
+    display: flex; /* Arrange the button and board side by side */
+    align-items: center; /* Align vertically */
+    gap: 20px; /* Add space between the button and the board */
+}
+
+/* Optional subtle glow animation for a lively effect */
+@keyframes subtleGlow {
+    0% {
+        filter: brightness(1);
+    }
+    100% {
+        filter: brightness(1.1);
+    }
+}
+
+/* Container and heading styles */
+.container {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #006400;
+    text-shadow: 2px 2px #ff0000; /* Festive shadow effect */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 15px; /* Space between cells */
+    width: 400px; /* Fixed width for the board */
+    max-width: 90%; /* Keep it responsive */
+}
+
+.cell {
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    background-color: #fff;
+    border: 3px solid #006400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Hover effect */
+}
+
+.cell img {
+    width: 95%; /* Scale the image width to fit 95% of the cell */
+    height: 95%; /* Scale the image height to fit 95% of the cell */
+    object-fit: contain; /* Ensure the image retains its aspect ratio */
+    transition: transform 0.2s ease; /* Add smooth scaling on hover */
+}
+
+/* Hover effect for better user interaction */
+.cell:hover {
+    background-color: #ffcccc;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add depth */
+}
+
+/* Reset button styles */
+#reset-button {
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add some depth */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reset-button:hover {
+    background-color: #ff0000;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in animation for modals */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal content styles */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Allow dynamic resizing */
+    max-width: 400px; /* Maximum width for large screens */
+    aspect-ratio: 1; /* Keeps the modal square */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Ensures padding doesn't break dimensions */
+    border-radius: 15px; /* Rounded corners for a polished look */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+}
+
+/* GIF inside modal */
+#modal-gif {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the GIF fits while maintaining proportions */
+    border-radius: 10px;
+}
+
+/* Full-screen modal styles */
+#milestone-modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background for full screen */
+    padding: 0;
+}
+
+#milestone-modal .modal-content {
+    background-color: transparent; /* No background for modal content */
+    border: none; /* Remove border for full-screen modal */
+    margin: 0; /* Remove default margins */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#milestone-image {
+    max-width: 90%; /* Scale the image to fit within the screen */
+    max-height: 90%; /* Prevent overflow */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8); /* Add shadow for effect */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Close button styles */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Full-screen modal styles */
+.fullscreen-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay background */
+    z-index: 1000; /* Ensure it sits above other content */
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-modal img {
+    max-width: 90%; /* Scale the image to fit the screen */
+    max-height: 90%; /* Maintain proportions */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Add a shadow for depth */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* Make it stand out */
+}
+
+.close-fullscreen:hover {
+    color: #ff0000; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge */
+}
+
+#modal-message {
+    font-size: 2rem; /* Larger size for visibility */
+    font-weight: bold; /* Make the text bold */
+    color: #ff0000; /* Christmas red color */
+    text-shadow: 2px 2px #224bde, 4px 4px #ffffff; /* Green and white shadow for a festive effect */
+    font-family: 'Pacifico', cursive; /* Optional festive font */
+    text-align: center; /* Center-align the message */
+    margin-bottom: 20px; /* Add spacing below the message */
+    animation: christmasGlow 1.5s infinite alternate; /* Add glowing animation */
+}
+
+/* Optional glowing animation */
+@keyframes christmasGlow {
+    0% {
+        text-shadow: 2px 2px #006400, 4px 4px #ffffff;
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 4px 4px #ff0000, 6px 6px #ffcccc;
+        transform: scale(1.1);
+    }
+}
