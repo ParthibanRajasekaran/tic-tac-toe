@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tic Tac Toe</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <button id="reset-button">Reset Game</button>
+        <div class="board">
+            <div class="cell" data-row="0" data-col="0"></div>
+            <div class="cell" data-row="0" data-col="1"></div>
+            <div class="cell" data-row="0" data-col="2"></div>
+            <div class="cell" data-row="1" data-col="0"></div>
+            <div class="cell" data-row="1" data-col="1"></div>
+            <div class="cell" data-row="1" data-col="2"></div>
+            <div class="cell" data-row="2" data-col="0"></div>
+            <div class="cell" data-row="2" data-col="1"></div>
+            <div class="cell" data-row="2" data-col="2"></div>
+        </div>
+    </div>
+
+    <!-- Modal for game results -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <p id="modal-message"></p>
+            <img id="modal-gif" src="" alt="Result GIF" />
+            <button id="milestone-button">Check Out Milestone</button>
+        </div>
+    </div>
+
+    <!-- Modal for milestone -->
+    <div id="milestone-modal" class="fullscreen-modal">
+        <span id="close-milestone-modal" class="close-fullscreen">&times;</span>
+        <img id="milestone-image" src="/static/images/milestone.png" alt="Milestone">
+    </div>
+    
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
